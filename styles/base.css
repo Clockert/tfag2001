@@ -1,0 +1,217 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  font-family: "Schibsted Grotesk", sans-serif;
+  color: #000000;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* CSS Variables */
+:root {
+  /* Colors */
+  --color-black: #000000;
+  --color-orange: #ef6400;
+  --color-lightblue: #d4dce9;
+  --color-darkblue: #022150;
+  --color-white: #ffffff;
+
+  /* Font */
+  --font-family: "Schibsted Grotesk", sans-serif;
+
+  /* Font sizes */
+  --font-size-menu: 17px;
+  --font-size-title: 40px;
+  --font-size-h1: 36px;
+  --font-size-h2: 32px;
+  --font-size-h3: 30px;
+  --font-size-body: 20px;
+  --font-size-form: 24px;
+  --font-size-menu-underline: 17px;
+
+  /* Line heights */
+  --line-height-body: 1.1; /* Based on the 20/110 notation in the image */
+
+  /* Shadow */
+  --shadow-default: 4px 4px 10.3px rgba(0, 0, 0, 0.25);
+
+  /* Individual shadow properties for more flexibility */
+  --shadow-offset-x: 4px;
+  --shadow-offset-y: 4px;
+  --shadow-blur: 10.3px;
+  --shadow-spread: 0;
+  --shadow-color: rgba(0, 0, 0, 0.25);
+
+  /* Spacing */
+  --padding-content: 75px;
+  --gap-content: 75px;
+
+  /* Button */
+  --button-padding: 12px 24px;
+  --button-border-radius: 999px; /* Fully rounded corners */
+}
+
+/* Base Container */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: var(--padding-content);
+  padding-right: var(--padding-content);
+}
+
+/* Section spacing */
+.section {
+  padding-top: var(--gap-content);
+  padding-bottom: var(--gap-content);
+}
+
+/* Content spacing utilities */
+.gap-y {
+  margin-top: var(--gap-content);
+  margin-bottom: var(--gap-content);
+}
+
+.gap-top {
+  margin-top: var(--gap-content);
+}
+
+.gap-bottom {
+  margin-bottom: var(--gap-content);
+}
+
+/* Content grid */
+.content-grid {
+  display: grid;
+  gap: var(--gap-content);
+}
+
+/* Typography */
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+body,
+p {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.title {
+  font-size: var(--font-size-title);
+}
+
+/* Typography spacing */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: calc(var(--gap-content) / 2);
+}
+
+p + p {
+  margin-top: calc(var(--gap-content) / 3);
+}
+
+/* Form Elements */
+input,
+select,
+textarea,
+button {
+  font-size: var(--font-size-form);
+}
+
+/* Form spacing */
+.form-group {
+  margin-bottom: calc(var(--gap-content) / 2);
+}
+
+/* Menu */
+.menu {
+  font-size: var(--font-size-menu);
+}
+
+.menu-underline {
+  font-size: var(--font-size-menu-underline);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: var(--button-padding);
+  border-radius: var(--button-border-radius);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-orange);
+  color: var(--color-darkblue);
+}
+
+.btn-primary:hover {
+  box-shadow: var(--shadow-default);
+  transform: translateY(-2px);
+}
+
+/* Links that look like buttons */
+a.btn {
+  text-decoration: none;
+}
